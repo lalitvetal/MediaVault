@@ -4,6 +4,12 @@ const UNSPLASH_KEY = import.meta.env.VITE_UNSPLASH_KEY;
 const PEXELS_KEY = import.meta.env.VITE_PEXELS_KEY;
 const GIPHY_KEY = import.meta.env.VITE_GIPHY_KEY;
 
+console.log('--- API Keys Diagnostic ---');
+console.log('Unsplash Key Load status:', UNSPLASH_KEY ? `Loaded (starts with ${UNSPLASH_KEY.substring(0, 4)}...)` : 'MISSING');
+console.log('Pexels Key Load status:', PEXELS_KEY ? `Loaded (starts with ${PEXELS_KEY.substring(0, 4)}...)` : 'MISSING');
+console.log('Giphy Key Load status:', GIPHY_KEY ? `Loaded (starts with ${GIPHY_KEY.substring(0, 4)}...)` : 'MISSING');
+console.log('---------------------------');
+
 const PER_PAGE = 20;
 
 export async function fetchPhotos(query, page = 1) {
